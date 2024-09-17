@@ -10,8 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.client.KeyboardHandler;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.text.Text;
 
 import no.name.tags.NoNameTags;
 
@@ -33,7 +32,7 @@ public class KeyboardHandlerMixin {
 
 				if (minecraft.player != null) {
 					String state = NoNameTags.hideNameTags ? "disabled" : "enabled";
-					Component message = new TextComponent(String.format("Name tag rendering has been %s!", state));
+					Text message = new Text.of(String.format("Name tag rendering has been %s!", state));
 
 					minecraft.player.displayClientMessage(message, true);
 				}
