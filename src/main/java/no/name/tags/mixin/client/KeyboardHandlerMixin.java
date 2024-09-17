@@ -32,7 +32,7 @@ public class KeyboardHandlerMixin {
 
 				if (minecraft.player != null) {
 					String state = NoNameTags.hideNameTags ? "disabled" : "enabled";
-					Component message = new Component.literal(String.format("Name tag rendering has been %s!", state));
+					Component message = Component.literal(String.format("Name tag rendering has been %s!", state));
 
 					minecraft.player.displayClientMessage(message, true);
 				}
